@@ -62,7 +62,7 @@ const Types = () => {
             )}
 
             {hasData && categories.map(category => (
-                <div className={styles.container}>
+                <div className={styles.container} key={category}>
                     <Typography variant="h4" gutterBottom align="left">
                         {category}
                     </Typography>
@@ -77,7 +77,7 @@ const Types = () => {
                         </TableHead>
                         <TableBody>
                             {filesByCategory[category].map(file => (
-                                <TableRow>
+                                <TableRow key={file.title}>
                                     <TableCell align="left">{file.title}</TableCell>
                                     <TableCell align="left">{file.status}</TableCell>
                                 </TableRow>

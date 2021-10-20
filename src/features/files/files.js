@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useMemo} from 'react';
 import getFiles from './files.service';
 import getUsers from '../users/users.service';
 
@@ -62,11 +62,13 @@ const Files = () => {
     const hasData = files?.length > 0 && users?.length > 0;
     const classes = useStyles();    
 
-    const filesWithNames = hasData ? files.map(file => ({...file, 
-        createdByUser: getUserNameById(users, file.createdBy), 
-        modifiedByUser: getUserNameById(users, file.modifiedBy)
-        })
-    ) : [];
+    const filesWithNames = useMemo(() => {
+        return hasData ? files.map(file => ({...file, 
+            createdByUser: getUserNameById(users, file.createdBy), 
+            modifiedByUser: getUserNameById(users, file.modifiedBy)
+            })
+        ) : [];
+    }, [hasData, users, files]);
 
     return (
         <div className={styles.container}>

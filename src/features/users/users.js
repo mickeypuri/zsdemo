@@ -58,7 +58,7 @@ const Users = () => {
                         </TableHead>
                         <TableBody>
                             {users.map(user => (
-                                <TableRow>
+                                <TableRow key={user.id}>
                                     <TableCell align="left">{user.id}</TableCell>
                                     <TableCell align="left">{user.givenName}</TableCell>
                                     <TableCell align="left">{user.familyName}</TableCell>
