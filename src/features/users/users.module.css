@@ -1,0 +1,9 @@
+.container {
+    padding-left:10em;
+    padding-right: 10em;
+    margin-top:2em;
+}
+
+tr th.heading {
+    font-weight: bold;
+}

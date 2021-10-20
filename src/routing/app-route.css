@@ -6,3 +6,9 @@ nav a {
 nav {
     margin-bottom: 40px;
 }
+
+.app-container {
+    padding-left:10em;
+    padding-right: 10em;
+    margin-top:2em;
+}
